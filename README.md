@@ -3,14 +3,16 @@
 
 ## .Net-Common-Utility
 
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://ci.appveyor.com/project/Jimmey-Jiang/common-utility)
-[![Codeship](https://img.shields.io/codeship/d6c1ddd0-16a3-0132-5f85-2e35c05e22b1.svg)](https://travis-ci.org/Jimmey-Jiang/Common.Utility)
-[![Github Releases (by Asset)](https://img.shields.io/github/downloads/atom/atom/latest/atom-amd64.deb.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
-[![NuGet](https://img.shields.io/nuget/v/DotnetSpider2.Extension.svg)](https://www.nuget.org/packages)
-[![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
-[![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/last-update/notepad4e.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://ci.appveyor.com/Sopcce/.Net-Common-Utility)
+
+[![Codeship](https://img.shields.io/codeship/d6c1ddd0-16a3-0132-5f85-2e35c05e22b1.svg)](https://travis-ci.org/Sopcce/.Net-Common-Utility)
+
+[![Github Releases (by Asset)](https://img.shields.io/github/downloads/atom/atom/latest/atom-amd64.deb.svg)](https://github.com/Sopcce/.Net-Common-Utility)
+
+[![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)](https://github.com/Sopcce/.Net-Common-Utility)
+
 [![JIRA sprint completion](https://img.shields.io/jira/sprint/https/jira.spring.io/94.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
-[![](https://img.shields.io/bitbucket/issues-raw/atlassian/python-bitbucket.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
+[![](https://img.shields.io/bitbucket/issues-raw/atlassian/python-bitbucket.svg)](https://github.com/Sopcce/.Net-Common-Utility)
 
 ### 初衷
 **网上有各式各样的帮助类，公共类，但是比较零碎，经常有人再群里或者各种社交账号上问我有没有这个helper,
