@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace Sop.Common.File
 {
     public class Class1
-    {
+    {   
     }
 }
