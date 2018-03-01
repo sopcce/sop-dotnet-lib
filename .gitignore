@@ -54,3 +54,5 @@ dkms.conf
 /.vs/Net-Common-Utility/v15/Server/sqlite3
 /.vs
 packages
+/Sop.Common.Serialization/*
+/Sop.Common.File/bin
