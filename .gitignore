@@ -52,3 +52,5 @@ Mkfile.old
 dkms.conf
 /Sop.Common.File/obj/Debug
 /.vs/Net-Common-Utility/v15/Server/sqlite3
+/.vs
+packages

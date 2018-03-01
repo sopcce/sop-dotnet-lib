@@ -1,0 +1,8 @@
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\bin\Debug\Sop.Common.Serialization.dll
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\bin\Debug\Sop.Common.Serialization.pdb
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\bin\Debug\Newtonsoft.Json.dll
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\bin\Debug\Newtonsoft.Json.xml
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\obj\Debug\Sop.Common.Serialization.csprojResolveAssemblyReference.cache
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\obj\Debug\Sop.Common.Serialization.csproj.CoreCompileInputs.cache
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\obj\Debug\Sop.Common.Serialization.dll
+E:\GitCode\.Net-Common-Utility\Sop.Common.Serialization\obj\Debug\Sop.Common.Serialization.pdb
