@@ -1,0 +1,5 @@
+E:\Item\.Net-Common-Utility\Sop.Common\obj\Debug\Sop.Common.csproj.CoreCompileInputs.cache
+E:\Item\.Net-Common-Utility\Sop.Common\bin\Debug\Sop.Common.dll
+E:\Item\.Net-Common-Utility\Sop.Common\bin\Debug\Sop.Common.pdb
+E:\Item\.Net-Common-Utility\Sop.Common\obj\Debug\Sop.Common.dll
+E:\Item\.Net-Common-Utility\Sop.Common\obj\Debug\Sop.Common.pdb

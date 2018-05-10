@@ -68,7 +68,7 @@ namespace Sop.Common.Serialization
     //    UsersLoginInfo = new UsersLoginInfo()
     //    {
     //      Id = 110112000,
-    //      name = "华星科技大厦9层",
+    //      name = "guojiaqiu",
     //      phone = "11222222",
     //      city = DateTime.Now.ToShortDateString(),
     //    }

@@ -37,6 +37,7 @@ namespace Sop.Common.Serialization
       };
       return JsonConvert.SerializeObject(obj, Formatting.None, settings);
 
+   
 
     }
     /// <summary>
@@ -89,14 +90,46 @@ namespace Sop.Common.Serialization
     {
 
       var settings = new JsonSerializerSettings()
+      { 
+        StringEscapeHandling = StringEscapeHandling.EscapeNonAscii,
+        NullValueHandling = NullValueHandling.Ignore
+      };
+      switch (type)
       {
-        ContractResolver = new SopJsonResolver(type),
+        case PropertyNameType.CamelCase:
+          settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+          break;
+        case PropertyNameType.ToLower:
+        case PropertyNameType.ToUpper:
+        case PropertyNameType.Default: 
+        default:
+          settings.ContractResolver = new SopJsonResolver(type);
+          break;
+      }
+     
+      return JsonConvert.SerializeObject(obj, Formatting.None, settings);
+
+    }
+    /// <summary>
+    /// To the json.
+    /// </summary>
+    /// <param name="obj">The object.</param>
+    /// <param name="formatting">The formatting.</param>
+    /// <returns></returns>
+    public static string ToJson(this object obj, Formatting formatting = Formatting.None)
+    {
+
+      var settings = new JsonSerializerSettings()
+      {
+        ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver(),
         StringEscapeHandling = StringEscapeHandling.EscapeNonAscii,
         NullValueHandling = NullValueHandling.Ignore
       };
       return JsonConvert.SerializeObject(obj, Formatting.None, settings);
 
     }
+
+
     /// <summary>
     /// To the json.
     /// </summary>
@@ -108,6 +141,10 @@ namespace Sop.Common.Serialization
       var settings2 = settings as JsonSerializerSettings;
       return JsonConvert.SerializeObject(obj, settings2);
     }
+
+
+
+
 
     public static T FromJson<T>(this string json)
     {

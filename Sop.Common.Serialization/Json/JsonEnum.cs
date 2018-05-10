@@ -18,12 +18,12 @@ namespace Sop.Common.Serialization.Json
     Default = 0,
     ToLower = 1,
     ToUpper = 2,
-
+    CamelCase = 3,
   }
 
   public enum DateTimeType
   {
-    Default = 0, 
+    Default = 0,
     //
     // 摘要:
     //     Treat as local time. If the System.DateTime object represents a Coordinated Universal
@@ -43,7 +43,7 @@ namespace Sop.Common.Serialization.Json
     //
     // 摘要:
     //     Time zone information should be preserved when converting.
-    MicrosoftDateFormatRoundtripKind = 13, 
+    MicrosoftDateFormatRoundtripKind = 13,
     //
     // 摘要:
     //     Treat as local time. If the System.DateTime object represents a Coordinated Universal
