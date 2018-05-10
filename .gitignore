@@ -56,3 +56,5 @@ dkms.conf
 packages
 /Sop.Common.Serialization/*
 /Sop.Common.File/bin
+/Sop.Common/obj
+/Sop.Common/bin
