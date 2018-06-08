@@ -16,8 +16,9 @@ namespace Sop.Common.Serialization.Json
   /// Newtonsoft.Json序列化扩展特性  
   /// <para>DateTime序列化（输出为时间戳）</para>  
   /// </summary>  
-  public class TimestampConverter : JsonConverter
+  public class JsonTimeStampConverter : JsonConverter
   {
+    static readonly DateTime DefaluTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Local);
     public override bool CanConvert(Type objectType)
     {
       return objectType == typeof(DateTime);
@@ -25,7 +26,9 @@ namespace Sop.Common.Serialization.Json
 
     public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
     {
-      return ConvertIntDateTime(long.Parse(reader.Value.ToString()));
+      long value = long.MinValue;
+      long.TryParse(reader.Value.ToString(), out value);
+      return ConvertIntDateTime(value);
     }
 
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
@@ -33,15 +36,19 @@ namespace Sop.Common.Serialization.Json
       writer.WriteValue(ConvertDateTimeInt((DateTime)value));
     }
 
-    public static DateTime ConvertIntDateTime(long aSeconds)
+    private static DateTime ConvertIntDateTime(long aSeconds)
     {
-      return new DateTime(1970, 1, 1, 0, 0, 0).AddSeconds(aSeconds);
+      return DefaluTime.AddSeconds(aSeconds);
     }
 
-    public static long ConvertDateTimeInt(DateTime date)
+    private static long ConvertDateTimeInt(DateTime date)
     {
-      return (long)(date - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds;
+      return (long)(date - DefaluTime).TotalSeconds;
     }
   }
+
+
+
+
 
 }

@@ -1,4 +1,13 @@
-﻿using System;
+﻿//<sopcce.com>
+//--------------------------------------------------------------
+//<version>V0.5</verion>
+//<createdate>2018-6-6</createdate>
+//<author>guojq</author>
+//<email>sopcce@qq.com</email>
+//<log date="2018-6-6" version="0.5">创建</log>
+//--------------------------------------------------------------
+//<sopcce.com>
+using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
