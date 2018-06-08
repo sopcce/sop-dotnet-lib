@@ -58,3 +58,5 @@ packages
 /Sop.Common.File/bin
 /Sop.Common/obj
 /Sop.Common/bin
+/Sop.Common.Img/obj
+/Tests/Sop.Common.Tests/bin/Debug
