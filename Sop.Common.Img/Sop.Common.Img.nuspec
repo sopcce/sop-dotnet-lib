@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <!-- 唯一的标识符 -->
+	<id>$id$</id>
+    <!-- 版本号-->
+    <version>$version$</version>
+    <!--标题-->
+    <title>$title$</title>
+    <!-- 作者 -->
+    <authors>sopcce</authors>
+    <!-- 拥有者。 nuget.org用户信息 -->
+    <owners>Sopcce.com</owners>
+    <!-- License  -->
+    <licenseUrl>https://github.com/Sopcce/.Net-Common-Utility/blob/master/LICENSE</licenseUrl>
+    <!--项目地址-->
+    <projectUrl>https://github.com/Sopcce/.Net-Common-Utility</projectUrl>
+    <!--图标在VisualStudio的包管理器UI中使用 -->
+    <iconUrl>https://github.com/Sopcce/.Net-Common-Utility/blob/master/it.png</iconUrl>
+    <!-- 如果为true，则此值提示用户何时接受许可证。安装软件包。 -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--关于这个特定版本的任何细节-->
+    <releaseNotes>Bug fixes and performance improvements</releaseNotes>
+    <!--该描述可用于包管理器UI。请注意Org.org画廊使用您在门户中添加的信息。  -->
+    <description>$description$ 这是描述</description>
+    <!-- Copyright information -->
+    <copyright>Copyright ©2018</copyright>
+    <!-- 标签出现在库中，可以用于标记搜索。 -->
+    <tags>web utility http json url parsing</tags>
+    <!-- Dependencies are automatically installed when the package is installed -->
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="9.0" />
+    </dependencies>
+  </metadata>
+  <!-- A readme.txt to display when the package is installed -->
+  <files>
+    <file src="readme.txt" target="" />
+  </files>
+</package>
