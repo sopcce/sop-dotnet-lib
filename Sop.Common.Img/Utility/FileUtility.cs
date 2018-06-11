@@ -8,7 +8,7 @@ namespace Sop.Common.Img.Utility
   /// <summary>
   /// 通用磁盘(IO)数据访问操作 
   /// </summary>
-  public class FileUtility
+  public static class FileUtility
   {
 
 

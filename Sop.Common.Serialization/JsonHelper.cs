@@ -43,16 +43,15 @@ namespace Sop.Common.Serialization
           settings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
           settings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
           break;
-
         case DateTimeType.Default:
           if (string.IsNullOrEmpty(dateFormatString))
           {
             dateFormatString = "yyyy-MM-dd HH:mm:ss";
           }
-
           settings.DateFormatString = dateFormatString;
           break;
         default:
+
           break;
 
       }

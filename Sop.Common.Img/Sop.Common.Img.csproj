@@ -47,10 +47,10 @@
   <ItemGroup>
     <Compile Include="Gif\AnimatedGifEncoder.cs" />
     <Compile Include="Gif\GifDecoder.cs" />
-    <Compile Include="Gif\LzwDecoder.cs" />
     <Compile Include="Gif\LzwEncoder.cs" />
     <Compile Include="Gif\NeuQuant.cs" />
     <Compile Include="DownImg.cs" />
+    <Compile Include="Gif\Validate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Class1.cs" />
     <Compile Include="Utility\Class2.cs" />

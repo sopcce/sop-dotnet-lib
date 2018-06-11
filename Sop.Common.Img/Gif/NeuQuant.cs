@@ -1,20 +1,17 @@
-﻿
- 
-
-using System;
+﻿using System;
 
 namespace Sop.Common.Img.Gif
 {
     /// <summary>
-    /// 
+    /// RGB算法集合
     /// </summary>
     public class NeuQuant
     {
         /* number of colours used */
-        /* four primes near 500 - assume no image has a length so large */
+        /* f */
         /* that it is divisible by all four primes */
         /// <summary>
-        /// 
+        /// RGB颜色范围值
         /// </summary>
         protected static readonly int Netsize = 256;
         /// <summary>

@@ -51,3 +51,6 @@ E:\Item\.Net-Common-Utility\Tests\Sop.Common.Tests\obj\Debug\Sop.Common.Tests.cs
 E:\Item\.Net-Common-Utility\Tests\Sop.Common.Tests\obj\Debug\Sop.Common.Tests.csproj.CopyComplete
 E:\Item\.Net-Common-Utility\Tests\Sop.Common.Tests\obj\Debug\Sop.Common.Tests.dll
 E:\Item\.Net-Common-Utility\Tests\Sop.Common.Tests\obj\Debug\Sop.Common.Tests.pdb
+E:\Item\.Net-Common-Utility\Tests\Sop.Common.Tests\bin\Debug\Sop.Common.Serialization.xml
+E:\Item\.Net-Common-Utility\Tests\Sop.Common.Tests\bin\Debug\Sop.Common.Img.dll
+E:\Item\.Net-Common-Utility\Tests\Sop.Common.Tests\bin\Debug\Sop.Common.Img.pdb
