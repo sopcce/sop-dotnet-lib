@@ -14,7 +14,9 @@ namespace Sop.Common.Img.Gif
     private char[] _identifyingCode;
     private int _defaultIdentifyingCodeLen = 4;
     private string _availableLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
+    /// <summary>
+    /// 
+    /// </summary>
     private Random random = new Random();
 
 
@@ -22,16 +24,9 @@ namespace Sop.Common.Img.Gif
     private int _delay = 900;
     private int _noiseCount = 15;
 
-    private int _width = 150, _height = 60;
-    public int Width
-    {
-      get { return _width; }
-    }
+    public int Width { get; } = 150;
 
-    public int Height
-    {
-      get { return _height; }
-    }
+    public int Height { get; } = 60;
 
     public string IdentifyingCode
     {
@@ -40,8 +35,8 @@ namespace Sop.Common.Img.Gif
 
     public Validate(int width, int height)
     {
-      _width = width < 1 ? 1 : width;
-      _height = height < 1 ? 1 : height;
+      Width = width < 1 ? 1 : width;
+      Height = height < 1 ? 1 : height;
       coder.SetSize(Width, Height);
       coder.SetRepeat(0);
     }
@@ -63,12 +58,27 @@ namespace Sop.Common.Img.Gif
       codes.CopyTo(_identifyingCode);
     }
 
-    public Stream Create(Stream stream)
+    public Stream Create(Stream _stream)
     {
-      coder.Start(stream);
+      coder.Start(_stream);
       Process();
       return stream;
     }
+    /// <summary>
+    /// 用它的这个方法,比用 stream 生成的要大!
+    /// </summary>
+    /// <param name="path"></param>
+    public void Create(string path)
+    {
+
+      FileStream fs = new FileStream(path, FileMode.Create);
+      coder.Start(fs);
+      Process();
+      fs.Close();
+    }
+
+
+
     /// <summary>
     /// 
     /// </summary>
@@ -115,17 +125,6 @@ namespace Sop.Common.Img.Gif
 
       ga.DrawLines(pen, ps);
     }
-    /// <summary>
-    /// 用它的这个方法,比用 stream 生成的要大!
-    /// </summary>
-    /// <param name="path"></param>
-    public void Create(string path)
-    {
-
-      FileStream fs = new FileStream(path, FileMode.Create);
-      coder.Start(fs);
-      Process();
-      fs.Close();
-    }
+   
   }
 }
