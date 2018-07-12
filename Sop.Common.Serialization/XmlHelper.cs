@@ -16,8 +16,16 @@ using Sop.Common.Serialization.XML;
 
 namespace Sop.Common.Serialization
 {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <typeparam name="T"></typeparam>
   public static class XmlHelper<T> where T : XmlEntity
   {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="path"></param>
     public static void SetPath(string path)
     {
 

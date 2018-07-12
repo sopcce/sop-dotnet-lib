@@ -107,10 +107,12 @@ namespace Sop.Common.Serialization
       return JsonConvert.SerializeObject(obj, settings2);
     }
 
-
-
-
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="json"></param>
+    /// <returns></returns>
     public static T FromJson<T>(this string json)
     {
       return JsonConvert.DeserializeObject<T>(json,

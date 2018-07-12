@@ -65,15 +65,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Img\UnitTest1.cs" />
+    <Compile Include="Img\GifTest.cs" />
     <Compile Include="Serialization\Model\UsersLoginInfo.cs" />
     <Compile Include="Serialization\Model\Order.cs" />
     <Compile Include="Serialization\Model\Orders.cs" />
+    <Compile Include="Serialization\JsonTest.cs" />
     <Compile Include="Serialization\XmlTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,11 +102,14 @@
     <Content Include="Img\src\01.png" />
     <Content Include="Img\src\02.png" />
     <Content Include="Img\src\03.png" />
+    <Content Include="Img\src\test.gif" />
     <Content Include="obj\Debug\src\01.png" />
     <Content Include="obj\Debug\src\02.png" />
     <Content Include="obj\Debug\src\03.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
