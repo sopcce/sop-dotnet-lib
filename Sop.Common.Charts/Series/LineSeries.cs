@@ -11,7 +11,7 @@ namespace Sop.Common.Charts.Series
     {
         public LineSeries()
         {
-            Type = SeriesTypes.line;
+            Type = SeriesTypes.Line;
         }
 
         /// <summary>

@@ -16,7 +16,7 @@ namespace Sop.Common.Charts.Components
         }
 
         /// <summary>
-        ///     是否显示标题组件。
+        ///   是否显示标题组件。
         /// </summary>
         public bool Show { get; set; }
 
@@ -29,6 +29,15 @@ namespace Sop.Common.Charts.Components
         ///     主标题文本超链接。
         /// </summary>
         public string Link { get; set; }
+
+        /// <summary>
+        /// 指定窗口打开主标题超链接。[ default: 'blank' ]'self' 当前窗口打开,'blank' 新窗口打开
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Target? Target { get; set; }
+
+    
+     
 
         /// <summary>
         ///     副标题文本，支持使用 \n 换行

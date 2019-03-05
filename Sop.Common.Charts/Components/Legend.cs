@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.ComponentModel;
 using Sop.Common.Charts.CommonDefinitions;
 using Sop.Common.Charts.Components.ToolTip;
@@ -6,31 +7,57 @@ using Sop.Common.Charts.ValueTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Sop.Common.Charts.Components.Legend
+
+namespace Sop.Common.Charts.Components
 {
     /// <summary>
-    ///     图例组件
+    /// 图例组件(https://www.echartsjs.com/option.html#legend.zlevel) 4.0+
     /// </summary>
     public class Legend
     {
-        public Legend()
+        public Legend(LegendType type = LegendType.Plain)
         {
-            Show = true;
+            if (Show && type.Equals(LegendType.Scroll))
+            {
+                scrollDataIndex
+            }
+
+
         }
+        public object scrollDataIndex { get; }
+
 
         /// <summary>
-        ///     是否显示图例组件。
+        /// 图例的类型。 
+        /// </summary> 
+        [JsonConverter(typeof(StringEnumConverter))]
+        public LegendType Type { get; set; }
+
+        /// <summary>
+        /// 组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件
+        /// </summary>
+        public string Id { get; set; } = null;
+        /// <summary>
+        ///  是否显示图例组件。
         /// </summary>
         [DefaultValue(true)]
-        public bool Show { get; set; }
+        public bool Show { get; set; } = true;
+
+        /// <summary> 
+        ///  所有图形的 zlevel 值。 [ default: 0 ], 设置为NULL不输出
+        ///zlevel用于 Canvas 分层，不同zlevel值的图形会放置在不同的 Canvas 中，Canvas 分层是一种常见的优化手段。我们可以把一些图形变化频繁（例如有动画）的组件设置成一个单独的zlevel。需要注意的是过多的 Canvas 会引起内存开销的增大，在手机端上需要谨慎使用以防崩溃。 
+        /// zlevel 大的 Canvas 会放在 zlevel 小的 Canvas 的上面。 
+        /// </summary>
+        [Obsolete("在手机端上需要谨慎使用以防崩溃。")]
+        public string Zlevel { get; set; } = null;
 
         /// <summary>
-        ///     图例列表的布局朝向。
+        /// [ default: 2 ]
+        //组件的所有图形的z值。控制图形的前后顺序。z值小的//图形会被z值大的图形覆盖。 
+        /// z相比zlevel优先级更低，而且不会创建新的 Canvas。
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public Orients Orient { get; set; }
-
-        public int Padding { get; set; }
+        [Obsolete("建议不要使用")]
+        public string Z { get; set; } = null;
 
         /// <summary>
         ///     图例组件离容器左侧的距离。
@@ -61,9 +88,25 @@ namespace Sop.Common.Charts.Components.Legend
         public IBottomValue Bottom { get; set; }
 
         /// <summary>
-        ///     图例组件的宽度。默认自适应。
+        ///     图例组件的宽度。默认自适应。[ default: 'auto' ]
         /// </summary>
         public string Width { get; set; }
+        /// <summary>
+        /// 图例组件的高度。默认自适应。[ default: 'auto' ]
+        /// </summary>
+        public string Height { get; set; }
+
+        /// <summary>
+        /// 图例列表的布局朝向。
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Orients Orient { get; set; }
+        /// <summary>
+        /// 图例标记和文本的对齐。默认自动
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public LegendAlign Align { get; set; }
+
 
         ////    使用字符串模板，模板变量为图例名称 {name}
         ////        formatter: 'Legend {name}'
@@ -77,6 +120,30 @@ namespace Sop.Common.Charts.Components.Legend
         ///     示例：
         /// </summary>
         public string Formatter { get; set; }
+
+        /// <summary>
+        /// 图例内边距，单位px，默认各方向内边距为5，接受数组分别设定上右下左边距。 [ default: 5 ]
+        /// <code>
+        /// // 设置内边距为 5
+        ///padding: 5
+        /// 设置上下的内边距为 5，左右的内边距为 10
+        ///padding: [5, 10]
+        /// 分别设置四个方向的内边距
+        ///padding: [
+        ///    5,  // 上
+        ///    10, // 右
+        ///    5,  // 下
+        ///    10, // 左
+        ///]</code> 
+        /// </summary>
+
+        public INumberOrArrayNumberValue Padding { get; set; }
+        /// <summary>
+        /// 图例每项之间的间隔。横向布局时为水平间隔，纵向布局时为纵向间隔。[ default: 10 ]
+        /// </summary> 
+        public int itemGap { get; set; }
+
+
 
         /// <summary>
         ///     图例选择的模式，默认开启图例选择，可以设成 false 关闭。
@@ -117,4 +184,6 @@ namespace Sop.Common.Charts.Components.Legend
         /// </summary>
         public LegendData[] Data { get; set; }
     }
+
+
 }

@@ -9,7 +9,7 @@ namespace Sop.Common.Charts.Series
     {
         public BarSeries()
         {
-            Type = SeriesTypes.bar;
+            Type = SeriesTypes.Bar;
         }
     }
 }

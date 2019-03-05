@@ -1,4 +1,5 @@
-﻿using Sop.Common.Charts.Axis;
+﻿using System;
+using Sop.Common.Charts.Axis;
 
 namespace Sop.Common.Charts.Axis
 {

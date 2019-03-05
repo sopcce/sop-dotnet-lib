@@ -5,6 +5,13 @@ using System.Text;
 
 namespace Sop.Common.Charts
 {
+
+   
+
+
+
+
+
     #region Axis 直角坐标系 grid 中的轴的相关配置封装，比如x轴、y轴等。
 
     #region AxisTypes 坐标轴类型
@@ -101,6 +108,15 @@ namespace Sop.Common.Charts
 
     #region TextAlign 标题文本水平对齐 
     /// <summary>
+    /// 指定窗口打开主标题超链接。
+    /// </summary>
+    public enum Target
+    {
+        Self,
+        Blank
+
+    }
+    /// <summary>
     ///     标题文本水平对齐
     /// </summary>
     public enum TextAlign
@@ -119,8 +135,9 @@ namespace Sop.Common.Charts
     {
         Left,
         Center,
-        Right
-    } 
+        Right,
+       
+    }
     #endregion
 
     #region VerticalAlign 垂直对齐
@@ -144,6 +161,9 @@ namespace Sop.Common.Charts
         Horizontal,
         Vertical
     }
+  
+
+
     #endregion
 
     #region Symbols 标记的图形
@@ -171,8 +191,30 @@ namespace Sop.Common.Charts
 
 
 
+
     #region Components 组件定义：DataZoom、DataZoomInside、DataZoomSlider、Grid、Legend、TimeLine、Title、ToolBox、ToolTip
-     
+
+    #region Legend
+    public enum LegendType
+    {
+        /// <summary>
+        /// 普通图例。缺省就是普通图例。
+        /// </summary>
+        Plain,
+        /// <summary>
+        /// 可滚动翻页的图例。当图例数量较多时可以使用。
+        /// </summary>
+        Scroll
+    }
+    public enum LegendAlign
+    {
+        Auto,
+        Left,
+        Right
+    } 
+    #endregion
+
+
     /// <summary>
     ///     表示『播放』按钮的位置。可选值：'left'、'right'。
     /// </summary>
@@ -226,58 +268,65 @@ namespace Sop.Common.Charts
 
 
     #endregion
+
     #region Series 每个系列通过 Type 决定自己的图表类型
 
     #region SeriesTypes
+    /*ECharts 
+     * 提供了常规的折线图、柱状图、散点图、饼图、K线图，
+     * 用于统计的盒形图，
+     * 用于地理数据可视化的地图、热力图、线图，
+     * 用于关系数据可视化的关系图、treemap、旭日图，多维数据可视化的平行坐标，
+     * 用于 BI 的漏斗图，仪表盘，并且支持图与图之间的混搭。*/
     // <summary>
     ///   图表类型
     /// </summary>
     public enum SeriesTypes
     {
         /// <summary>
-        ///     折线/面积图
+        ///     折线图/面积图
         /// </summary>
-        line,
+        Line,
 
         /// <summary>
         ///     柱状/条形图
         /// </summary>
-        bar,
+        Bar,
 
         /// <summary>
         ///     饼图
         /// </summary>
-        pie,
+        Pie,
 
         /// <summary>
         ///     散点（气泡）图
         /// </summary>
-        scatter,
+        Scatter,
 
         /// <summary>
         ///     带有涟漪特效动画的散点（气泡）图。利用动画特效可以将某些想要突出的数据进行视觉突出。
         /// </summary>
-        effectScatter,
+        EffectScatter,
 
         /// <summary>
         ///     雷达图
         /// </summary>
-        radar,
+        Radar,
 
         /// <summary>
         ///     Treemap 是一种常见的表达『层级数据』『树状数据』的可视化形式。它主要用面积的方式，便于突出展现出『树』的各层级中重要的节点。
         /// </summary>
-        treemap,
+        Treemap,
 
         /// <summary>
         ///     『箱形图』、『盒须图』、『盒式图』、『盒状图』、『箱线图』
         /// </summary>
-        boxplot,
+        Boxplot,
 
         /// <summary>
         ///     K线图
         /// </summary>
-        candlestick,
+        Candlestick,
 
         /// <summary>
         ///     热力图
@@ -287,37 +336,37 @@ namespace Sop.Common.Charts
         /// <summary>
         ///     地图。
         /// </summary>
-        map,
+        Map,
 
         /// <summary>
         ///     平行坐标系（Parallel Coordinates）
         /// </summary>
-        parallel,
+        Parallel,
 
         /// <summary>
         ///     线图
         /// </summary>
-        lines,
+        Lines,
 
         /// <summary>
         ///     关系图
         /// </summary>
-        graph,
+        Graph,
 
         /// <summary>
         ///     桑基图
         /// </summary>
-        sankey,
+        Sankey,
 
         /// <summary>
         ///     漏斗图
         /// </summary>
-        funnel,
+        Funnel,
 
         /// <summary>
         ///     仪表盘
         /// </summary>
-        gauge
+        Gauge
     }
     #endregion
 
@@ -344,8 +393,47 @@ namespace Sop.Common.Charts
     }
     #endregion
 
-
-
+    /// <summary>
+    /// 初始动画的缓动效果 不同的缓动效果可以参考 缓动示例:
+    /// https://www.echartsjs.com/gallery/editor.html?c=line-easing。
+    /// </summary>
+    public enum AnimationEasing
+    {
+        linear,
+        quadraticIn,
+        quadraticOut,
+        quadraticInOut,
+        cubicIn,
+        cubicOut,
+        cubicInOut,
+        quarticIn,
+        quarticOut,
+        quarticInOut,
+        quinticIn,
+        quinticOut,
+        quinticInOut,
+        sinusoidalIn,
+        sinusoidalOut,
+        sinusoidalInOut,
+        exponentialIn,
+        exponentialOut,
+        exponentialInOut,
+        circularIn,
+        circularOut,
+        circularInOut,
+        elasticIn,
+        elasticOut,
+        elasticInOut,
+        /// <summary>
+        /// 在某一动画开始沿指示的路径进行动画处理前稍稍收回该动画的移动
+        /// </summary>
+        backIn,
+        backOut,
+        backInOut,
+        bounceIn,
+        bounceOut,
+        bounceInOut
+    }
 
 
 
