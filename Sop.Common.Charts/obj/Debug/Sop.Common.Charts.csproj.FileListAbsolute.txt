@@ -19,3 +19,4 @@ E:\GitHub\.Net-Common-Utility\Sop.Common.Charts\bin\Debug\System.Web.Razor.xml
 E:\GitHub\.Net-Common-Utility\Sop.Common.Charts\bin\Debug\System.Web.WebPages.xml
 E:\GitHub\.Net-Common-Utility\Sop.Common.Charts\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\GitHub\.Net-Common-Utility\Sop.Common.Charts\bin\Debug\System.Web.WebPages.Razor.xml
+E:\GitHub\.Net-Common-Utility\Sop.Common.Charts\obj\Debug\Sop.Common.Charts.csprojAssemblyReference.cache

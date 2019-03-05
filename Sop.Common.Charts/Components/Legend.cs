@@ -19,7 +19,7 @@ namespace Sop.Common.Charts.Components
         {
             if (Show && type.Equals(LegendType.Scroll))
             {
-                scrollDataIndex
+                //scrollDataIndex;
             }
 
 
