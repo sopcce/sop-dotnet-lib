@@ -61,3 +61,5 @@ packages
 /Sop.Common.Img/obj
 /Tests/Sop.Common.Tests/bin/Debug
 /TestResults
+/Sop.Common.Charts/obj
+/Sop.Common.Charts/bin
