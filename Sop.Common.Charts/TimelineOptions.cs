@@ -6,7 +6,7 @@ namespace Sop.Common.Charts
 {
     /// <summary>
     ///     timeline配置项
-    ///     timeline 和其他组件有些不同，它需要操作『多个option』
+    ///     timeline 和其他组件有些不同，它需要操作『多个option』  
     /// </summary>
     public class TimelineOptions
     {
