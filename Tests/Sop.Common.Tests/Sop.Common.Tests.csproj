@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sop.Common.Tests</RootNamespace>
     <AssemblyName>Sop.Common.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Img\GifTest.cs" />
+    <Compile Include="Quartz\UnitTest1.cs" />
     <Compile Include="Serialization\Model\UsersLoginInfo.cs" />
     <Compile Include="Serialization\Model\Order.cs" />
     <Compile Include="Serialization\Model\Orders.cs" />
@@ -86,6 +87,10 @@
     <ProjectReference Include="..\..\Sop.Common.Img\Sop.Common.Img.csproj">
       <Project>{6d9c4669-ca00-4838-b190-35f4cc01c7b6}</Project>
       <Name>Sop.Common.Img</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sop.Common.Quartz\Sop.Common.Quartz.csproj">
+      <Project>{e959a653-0be4-474c-baf4-25d24df3f46b}</Project>
+      <Name>Sop.Common.Quartz</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Sop.Common.Serialization\Sop.Common.Serialization.csproj">
       <Project>{8e807449-e634-4971-8990-e63db141ecb8}</Project>

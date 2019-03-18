@@ -63,3 +63,6 @@ packages
 /TestResults
 /Sop.Common.Charts/obj
 /Sop.Common.Charts/bin
+/Tests/Sop.Common.Tests/obj
+/Sop.Common.Quartz/bin
+/Sop.Common.Quartz/obj
