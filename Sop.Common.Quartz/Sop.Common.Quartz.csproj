@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10B7EFD2-B72C-4EB4-890E-514A4EAED829}</ProjectGuid>
+    <ProjectGuid>{E959A653-0BE4-474C-BAF4-25D24DF3F46B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sop.Common</RootNamespace>
-    <AssemblyName>Sop.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>Sop.Common.Quartz</RootNamespace>
+    <AssemblyName>Sop.Common.Quartz</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,17 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="IDCardNumber.cs" />
+    <Compile Include="CronExpression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\ByteUtil.cs" />
-    <Compile Include="Utilities\DelegateFactory.cs" />
-    <Compile Include="Utilities\FlowControlUtil.cs" />
-    <Compile Include="Utilities\ObjectId.cs" />
-    <Compile Include="Utilities\ObjectUtils.cs" />
-    <Compile Include="Utilities\TypeUtils.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="AreaCodeInfo.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
