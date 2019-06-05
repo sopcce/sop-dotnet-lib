@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace Sop.Common.Img.Gif
+
 {
     /// <summary>
     /// RGB算法集合

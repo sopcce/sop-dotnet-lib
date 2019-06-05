@@ -201,7 +201,7 @@ namespace HttpProc
 
 
     //解决证书过期无法访问的问题  
-    class CertPolicy : ICertificatePolicy
+    class CertPolicy //: ICertificatePolicy
     {
       public bool CheckValidationResult(ServicePoint srvpt, X509Certificate cert, WebRequest req, int certprb)
       { return true; }
@@ -215,7 +215,7 @@ namespace HttpProc
     ///<returns></returns>  
     public string OpenReadWithHttps(string URL, string strPostdata)
     {
-      ServicePointManager.CertificatePolicy = new CertPolicy();
+      //ServicePointManager.CertificatePolicy = new CertPolicy();
       HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
       request.CookieContainer = new CookieContainer();
       request.Method = "POST";
