@@ -61,7 +61,7 @@ namespace Sop.Common
         private static void FillAreas()
         {
             XmlDocument docXml = new XmlDocument();
-            string file = HostingEnvironment.MapPath("~/AreaCodeInfo.xml");
+            string file = "HostingEnvironment.MapPath(\"~/AreaCodeInfo.xml\")";
             docXml.Load(file);
             XmlNodeList nodelist = docXml.GetElementsByTagName("area");
             foreach (XmlNode node in nodelist)

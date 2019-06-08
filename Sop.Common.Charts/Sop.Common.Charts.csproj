@@ -1,109 +1,76 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D9596503-48CC-4257-BE62-82D6D1577383}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sop.Common.Charts</RootNamespace>
-    <AssemblyName>Sop.Common.Charts</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Axis\AxisLine.cs" />
-    <Compile Include="Axis\LineStyle.cs" />
-    <Compile Include="Axis\XAxis.cs" />
-    <Compile Include="Axis\YAxis.cs" />
-    <Compile Include="Enum.cs" />
-    <Compile Include="CommonDefinitions\Label.cs" />
-    <Compile Include="CommonDefinitions\TextStyles.cs" />
-    <Compile Include="CommonDefinitions\ToolBoxFeature.cs" />
-    <Compile Include="Components\DataZoom.cs" />
-    <Compile Include="Components\Grid.cs" />
-    <Compile Include="Components\Legend.cs" />
-    <Compile Include="Components\LegendData.cs" />
-    <Compile Include="Components\TimeLine.cs" />
-    <Compile Include="Components\Title.cs" />
-    <Compile Include="Components\ToolBox.cs" />
-    <Compile Include="Components\Tooltip.cs" />
-    <Compile Include="EChartsOptions.cs" />
-    <Compile Include="JsonConverter\MVC\JavaScriptJsonResult.cs" />
-    <Compile Include="JsonConverter\MVC\MvcExtension.cs" />
-    <Compile Include="JsonConverter\ValueConverter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Series\BarSeries.cs" />
-    <Compile Include="Series\LineSeries.cs" />
-    <Compile Include="Series\Mark\MarkData.cs" />
-    <Compile Include="Series\Mark\MarkLine.cs" />
-    <Compile Include="Series\Mark\MarkPoint.cs" />
-    <Compile Include="Series\Series.cs" />
-    <Compile Include="TimelineOptions.cs" />
-    <Compile Include="ValueTypes\AlignValue.cs" />
-    <Compile Include="ValueTypes\ArrayNumberValue.cs" />
-    <Compile Include="ValueTypes\DoubleValue.cs" />
-    <Compile Include="ValueTypes\IValue.cs" />
-    <Compile Include="ValueTypes\NumberValue.cs" />
-    <Compile Include="ValueTypes\StringValue.cs" />
-    <Compile Include="ValueTypes\SymbolValue.cs" />
-    <Compile Include="ValueTypes\VerticalAlignValue.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net461;net45;</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Version>0.1.1</Version>
+        <Authors>sopcce@hotmail.com;</Authors>
+        <Copyright>Copyright 2019 sopcce.com</Copyright>
+        <PackageId>Sop.Common.Img</PackageId>
+        <Description>Sop.Common.Img</Description>
+        <PackageTags>Sop.Common.Img</PackageTags>
+        <PackageProjectUrl>https://github.com/Sopcce/.Net-Common-Utility</PackageProjectUrl>
+        <PackageIconUrl>https://raw.githubusercontent.com/Sopcce/.Net-Common-Utility/master/favicon.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/Sopcce/.Net-Common-Utility</RepositoryUrl>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <PackageLicenseUrl>https://github.com/Sopcce/.Net-Common-Utility/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryType>LGPL</RepositoryType>
+        <PackageReleaseNotes>Sop.Common.Img</PackageReleaseNotes>
+        <NeutralLanguage>en</NeutralLanguage>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <FileVersion>1.1.0.0</FileVersion>
+        <Company>sopcce@hotmail.com;</Company>
+        <Product>Sop.Common.Img</Product>
+    </PropertyGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">        
+    </ItemGroup>
+   
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+        <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Microsoft.VisualBasic">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.VisualBasic.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Data.Entity">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.Entity.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Runtime.Caching">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Caching.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Spider.Properties.cs">
+            <DependentUpon>Spider.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Data\Parser\DataParser`.cs">
+            <DependentUpon>DataParser.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+      <PackageReference Include="Microsoft.AspNet.Mvc">
+        <Version>5.2.7</Version>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+      <PackageReference Include="Microsoft.AspNet.Mvc">
+        <Version>5.2.7</Version>
+      </PackageReference>
+    </ItemGroup>
+
 </Project>
+ 

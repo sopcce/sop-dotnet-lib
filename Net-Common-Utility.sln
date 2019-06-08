@@ -5,23 +5,17 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.File", "Sop.Common.File\Sop.Common.File.csproj", "{B3F5592B-62AA-45C1-9EC0-9F3A70E5AEBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.Serialization", "Sop.Common.Serialization\Sop.Common.Serialization.csproj", "{8E807449-E634-4971-8990-E63DB141ECB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Serialization", "Sop.Common.Serialization\Sop.Common.Serialization.csproj", "{8E807449-E634-4971-8990-E63DB141ECB8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8B9AA686-51BD-40BD-96C3-F34205F0D8BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.Tests", "Tests\Sop.Common.Tests\Sop.Common.Tests.csproj", "{89007BBA-CCCB-4A87-BDF5-DA27770EAC98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common", "Sop.Common\Sop.Common.csproj", "{10B7EFD2-B72C-4EB4-890E-514A4EAED829}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common", "Sop.Common\Sop.Common.csproj", "{10B7EFD2-B72C-4EB4-890E-514A4EAED829}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.Img", "Sop.Common.Img\Sop.Common.Img.csproj", "{6D9C4669-CA00-4838-B190-35F4CC01C7B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Img", "Sop.Common.Img\Sop.Common.Img.csproj", "{6D9C4669-CA00-4838-B190-35F4CC01C7B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.Data", "Sop.Common.Data\Sop.Common.Data.csproj", "{882CA410-7BD4-4CCF-80E4-E1AA25DC42DA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.WebTest", "Tests\Sop.Common.WebTest\Sop.Common.WebTest.csproj", "{755F900C-1D20-44EC-849A-97DA927D8F55}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.Charts", "Sop.Common.Charts\Sop.Common.Charts.csproj", "{D9596503-48CC-4257-BE62-82D6D1577383}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magicodes.ECharts.Demo", "..\Log\Magicodes.ECharts\Magicodes.ECharts.Demo\Magicodes.ECharts.Demo.csproj", "{A71D16ED-2084-4B27-AC86-07D9250448A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Charts", "Sop.Common.Charts\Sop.Common.Charts.csproj", "{D9596503-48CC-4257-BE62-82D6D1577383}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.Quartz", "Sop.Common.Quartz\Sop.Common.Quartz.csproj", "{E959A653-0BE4-474C-BAF4-25D24DF3F46B}"
 EndProject
@@ -51,22 +45,10 @@ Global
 		{6D9C4669-CA00-4838-B190-35F4CC01C7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D9C4669-CA00-4838-B190-35F4CC01C7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D9C4669-CA00-4838-B190-35F4CC01C7B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{882CA410-7BD4-4CCF-80E4-E1AA25DC42DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{882CA410-7BD4-4CCF-80E4-E1AA25DC42DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{882CA410-7BD4-4CCF-80E4-E1AA25DC42DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{882CA410-7BD4-4CCF-80E4-E1AA25DC42DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{755F900C-1D20-44EC-849A-97DA927D8F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{755F900C-1D20-44EC-849A-97DA927D8F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{755F900C-1D20-44EC-849A-97DA927D8F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{755F900C-1D20-44EC-849A-97DA927D8F55}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9596503-48CC-4257-BE62-82D6D1577383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D9596503-48CC-4257-BE62-82D6D1577383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9596503-48CC-4257-BE62-82D6D1577383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9596503-48CC-4257-BE62-82D6D1577383}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A71D16ED-2084-4B27-AC86-07D9250448A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A71D16ED-2084-4B27-AC86-07D9250448A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A71D16ED-2084-4B27-AC86-07D9250448A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A71D16ED-2084-4B27-AC86-07D9250448A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E959A653-0BE4-474C-BAF4-25D24DF3F46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E959A653-0BE4-474C-BAF4-25D24DF3F46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E959A653-0BE4-474C-BAF4-25D24DF3F46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,8 +59,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{89007BBA-CCCB-4A87-BDF5-DA27770EAC98} = {8B9AA686-51BD-40BD-96C3-F34205F0D8BA}
-		{755F900C-1D20-44EC-849A-97DA927D8F55} = {8B9AA686-51BD-40BD-96C3-F34205F0D8BA}
-		{A71D16ED-2084-4B27-AC86-07D9250448A6} = {8B9AA686-51BD-40BD-96C3-F34205F0D8BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A6B9FB4-FC38-453E-9798-4857FA1FB8A4}

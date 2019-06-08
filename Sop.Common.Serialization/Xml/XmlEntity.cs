@@ -9,7 +9,7 @@
 //<sopcce.com>
 using System;
 
-namespace Sop.Common.Serialization.XML
+namespace Sop.Common.Serialization.Xml
 {
     public class XmlEntity
     {

@@ -193,57 +193,57 @@ namespace Sop.Common.Quartz
         /// <summary>
         /// Field specification for second.
         /// </summary>
-        protected const int Second = 0;
+        public const int Second = 0;
 
         /// <summary>
         /// Field specification for minute.
         /// </summary>
-        protected const int Minute = 1;
+        public const int Minute = 1;
 
         /// <summary>
         /// Field specification for hour.
         /// </summary>
-        protected const int Hour = 2;
+        public const int Hour = 2;
 
         /// <summary>
         /// Field specification for day of month.
         /// </summary>
-        protected const int DayOfMonth = 3;
+        public const int DayOfMonth = 3;
 
         /// <summary>
         /// Field specification for month.
         /// </summary>
-        protected const int Month = 4;
+        public const int Month = 4;
 
         /// <summary>
         /// Field specification for day of week.
         /// </summary>
-        protected const int DayOfWeek = 5;
+        public const int DayOfWeek = 5;
 
         /// <summary>
         /// Field specification for year.
         /// </summary>
-        protected const int Year = 6;
+        public const int Year = 6;
 
         /// <summary>
         /// Field specification for all wildcard value '*'.
         /// </summary>
-        protected const int AllSpecInt = 99; // '*'
+        public const int AllSpecInt = 99; // '*'
 
         /// <summary>
         /// Field specification for not specified value '?'.
         /// </summary>
-        protected const int NoSpecInt = 98; // '?'
+        public const int NoSpecInt = 98; // '?'
 
         /// <summary>
         /// Field specification for wildcard '*'.
         /// </summary>
-        protected const int AllSpec = AllSpecInt;
+        public const int AllSpec = AllSpecInt;
 
         /// <summary>
         /// Field specification for no specification at all '?'.
         /// </summary>
-        protected const int NoSpec = NoSpecInt;
+        public const int NoSpec = NoSpecInt;
 
         private static readonly Dictionary<string, int> monthMap = new Dictionary<string, int>(20);
         private static readonly Dictionary<string, int> dayMap = new Dictionary<string, int>(60);
@@ -256,77 +256,77 @@ namespace Sop.Common.Quartz
         /// Seconds.
         /// </summary>
         [NonSerialized]
-        protected TreeSet<int> seconds;
+        public TreeSet<int> seconds;
         /// <summary>
         /// minutes.
         /// </summary>
         [NonSerialized]
-        protected TreeSet<int> minutes;
+        public TreeSet<int> minutes;
         /// <summary>
         /// Hours.
         /// </summary>
         [NonSerialized]
-        protected TreeSet<int> hours;
+        public TreeSet<int> hours;
         /// <summary>
         /// Days of month.
         /// </summary>
         [NonSerialized]
-        protected TreeSet<int> daysOfMonth;
+        public TreeSet<int> daysOfMonth;
         /// <summary>
         /// Months.
         /// </summary>
         [NonSerialized]
-        protected TreeSet<int> months;
+        public TreeSet<int> months;
         /// <summary>
         /// Days of week.
         /// </summary>
         [NonSerialized]
-        protected TreeSet<int> daysOfWeek;
+        public TreeSet<int> daysOfWeek;
         /// <summary>
         /// Years.
         /// </summary>
         [NonSerialized]
-        protected TreeSet<int> years;
+        public TreeSet<int> years;
 
         /// <summary>
         /// Last day of week.
         /// </summary>
         [NonSerialized]
-        protected bool lastdayOfWeek;
+        public bool lastdayOfWeek;
         /// <summary>
         /// Nth day of week.
         /// </summary>
         [NonSerialized]
-        protected int nthdayOfWeek;
+        public int nthdayOfWeek;
         /// <summary>
         /// Last day of month.
         /// </summary>
         [NonSerialized]
-        protected bool lastdayOfMonth;
+        public bool lastdayOfMonth;
         /// <summary>
         /// Nearest weekday.
         /// </summary>
         [NonSerialized]
-        protected bool nearestWeekday;
+        public bool nearestWeekday;
 
         [NonSerialized]
-        protected int lastdayOffset = 0;
+        public int lastdayOffset = 0;
 
         /// <summary>
         /// Calendar day of week.
         /// </summary>
         [NonSerialized]
-        protected bool calendardayOfWeek;
+        public bool calendardayOfWeek;
         /// <summary>
         /// Calendar day of month.
         /// </summary>
         [NonSerialized]
-        protected bool calendardayOfMonth;
+        public bool calendardayOfMonth;
         /// <summary>
         /// Expression parsed.
         /// </summary>
         [NonSerialized]
-        protected bool expressionParsed;
+        public bool expressionParsed;
 
         public static readonly int MaxYear = DateTime.Now.Year + 100;
 
@@ -1047,7 +1047,7 @@ namespace Sop.Common.Quartz
         /// Builds the expression.
         /// </summary>
         /// <param name="expression">The expression.</param>
-        protected void BuildExpression(string expression)
+        public void BuildExpression(string expression)
         {
             expressionParsed = true;
 
@@ -1171,7 +1171,7 @@ namespace Sop.Common.Quartz
         /// <param name="s">The string to traverse.</param>
         /// <param name="type">The type of value.</param>
         /// <returns></returns>
-        protected virtual int StoreExpressionVals(int pos, string s, int type)
+        public virtual int StoreExpressionVals(int pos, string s, int type)
         {
             int incr = 0;
             int i = SkipWhiteSpace(pos, s);
@@ -1433,7 +1433,7 @@ namespace Sop.Common.Quartz
         /// <param name="val">The value.</param>
         /// <param name="type">The type to search.</param>
         /// <returns></returns>
-        protected virtual int CheckNext(int pos, string s, int val, int type)
+        public virtual int CheckNext(int pos, string s, int val, int type)
         {
             int end = -1;
             int i = pos;
@@ -1624,7 +1624,7 @@ namespace Sop.Common.Quartz
         /// </summary>
         /// <param name="data">The data.</param>
         /// <returns></returns>
-        protected virtual string GetExpressionSetSummary(Collection.ISet<int> data)
+        public virtual string GetExpressionSetSummary(Collection.ISet<int> data)
         {
             if (data.Contains(NoSpec))
             {
@@ -1658,7 +1658,7 @@ namespace Sop.Common.Quartz
         /// <param name="i">The i.</param>
         /// <param name="s">The s.</param>
         /// <returns></returns>
-        protected virtual int SkipWhiteSpace(int i, string s)
+        public virtual int SkipWhiteSpace(int i, string s)
         {
             for (; i < s.Length && (s[i] == ' ' || s[i] == '\t'); i++)
             {
@@ -1673,7 +1673,7 @@ namespace Sop.Common.Quartz
         /// <param name="i">The i.</param>
         /// <param name="s">The s.</param>
         /// <returns></returns>
-        protected virtual int FindNextWhiteSpace(int i, string s)
+        public virtual int FindNextWhiteSpace(int i, string s)
         {
             for (; i < s.Length && (s[i] != ' ' || s[i] != '\t'); i++)
             {
@@ -1689,7 +1689,7 @@ namespace Sop.Common.Quartz
         /// <param name="end">The end.</param>
         /// <param name="incr">The incr.</param>
         /// <param name="type">The type.</param>
-        protected virtual void AddToSet(int val, int end, int incr, int type)
+        public virtual void AddToSet(int val, int end, int incr, int type)
         {
             ISortedSet<int> data = GetSet(type);
 
@@ -1873,7 +1873,7 @@ namespace Sop.Common.Quartz
         /// </summary>
         /// <param name="type">The type of set to get.</param>
         /// <returns></returns>
-        protected virtual ISortedSet<int> GetSet(int type)
+        public virtual ISortedSet<int> GetSet(int type)
         {
             switch (type)
             {
@@ -1903,7 +1903,7 @@ namespace Sop.Common.Quartz
         /// <param name="s">The s.</param>
         /// <param name="i">The i.</param>
         /// <returns></returns>
-        protected virtual ValueSet GetValue(int v, string s, int i)
+        public virtual ValueSet GetValue(int v, string s, int i)
         {
             char c = s[i];
             StringBuilder s1 = new StringBuilder(v.ToString(CultureInfo.InvariantCulture));
@@ -1936,7 +1936,7 @@ namespace Sop.Common.Quartz
         /// <param name="s">The string to parse from.</param>
         /// <param name="i">The i.</param>
         /// <returns></returns>
-        protected virtual int GetNumericValue(string s, int i)
+        public virtual int GetNumericValue(string s, int i)
         {
             int endOfVal = FindNextWhiteSpace(i, s);
             string val = s.Substring(i, endOfVal - i);
@@ -1948,7 +1948,7 @@ namespace Sop.Common.Quartz
         /// </summary>
         /// <param name="s">The string to map with.</param>
         /// <returns></returns>
-        protected virtual int GetMonthNumber(string s)
+        public virtual int GetMonthNumber(string s)
         {
             if (monthMap.ContainsKey(s))
             {
@@ -1963,7 +1963,7 @@ namespace Sop.Common.Quartz
         /// </summary>
         /// <param name="s">The s.</param>
         /// <returns></returns>
-        protected virtual int GetDayOfWeekNumber(string s)
+        public virtual int GetDayOfWeekNumber(string s)
         {
             if (dayMap.ContainsKey(s))
             {
@@ -1982,7 +1982,7 @@ namespace Sop.Common.Quartz
         /// <param name="dayofmn">The day of month.</param>
         /// <param name="mon">The month.</param>
         /// <returns></returns>
-        protected virtual DateTimeOffset? GetTime(int sc, int mn, int hr, int dayofmn, int mon)
+        public virtual DateTimeOffset? GetTime(int sc, int mn, int hr, int dayofmn, int mon)
         {
             try
             {
@@ -2019,7 +2019,7 @@ namespace Sop.Common.Quartz
         /// </summary>
         /// <param name="time">The time.</param>
         /// <returns></returns>
-        protected static DateTimeOffset CreateDateTimeWithoutMillis(DateTimeOffset time)
+        public static DateTimeOffset CreateDateTimeWithoutMillis(DateTimeOffset time)
         {
             return new DateTimeOffset(time.Year, time.Month, time.Day, time.Hour, time.Minute, time.Second, time.Offset);
         }
@@ -2031,7 +2031,7 @@ namespace Sop.Common.Quartz
         /// <param name="date">The date.</param>
         /// <param name="hour">The hour.</param>
         /// <returns></returns>
-        protected static DateTimeOffset SetCalendarHour(DateTimeOffset date, int hour)
+        public static DateTimeOffset SetCalendarHour(DateTimeOffset date, int hour)
         {
             // Java version of Quartz uses lenient calendar
             // so hour 24 creates day increment and zeroes hour
@@ -2056,7 +2056,7 @@ namespace Sop.Common.Quartz
         /// <returns>
         /// 	<c>true</c> if the specified year is a leap year; otherwise, <c>false</c>.
         /// </returns>
-        protected virtual bool IsLeapYear(int year)
+        public virtual bool IsLeapYear(int year)
         {
             return DateTime.IsLeapYear(year);
         }
@@ -2067,7 +2067,7 @@ namespace Sop.Common.Quartz
         /// <param name="monthNum">The month num.</param>
         /// <param name="year">The year.</param>
         /// <returns></returns>
-        protected virtual int GetLastDayOfMonth(int monthNum, int year)
+        public virtual int GetLastDayOfMonth(int monthNum, int year)
         {
             return DateTime.DaysInMonth(year, monthNum);
         }

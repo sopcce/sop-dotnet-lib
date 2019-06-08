@@ -15,10 +15,10 @@ namespace Sop.Common.Serialization.Json
 {
   public enum PropertyNameType
   {
-    Default = 0,
-    ToLower = 1,
-    ToUpper = 2,
-    CamelCase = 3,
+    Default,
+    ToLower,
+    ToUpper,
+    CamelCase,
   }
 
   public enum DateTimeType

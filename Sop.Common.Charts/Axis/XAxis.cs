@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using Sop.Common.Charts.Axis;
 using Sop.Common.Charts.CommonDefinitions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Sop.Common.Charts.CommonDefinitions;
 
 namespace Sop.Common.Charts.Axis
 {

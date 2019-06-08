@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace Sop.Common.Serialization.XML
+namespace Sop.Common.Serialization.Xml
 {
   public static class ListExtend
   {

@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace Sop.Common.Serialization.Json
-{
-
- 
-
-
+{ 
   /// <summary>  
   /// Newtonsoft.Json序列化扩展特性  
   /// <para>String Unicode 序列化（输出为Unicode编码字符）</para>  
