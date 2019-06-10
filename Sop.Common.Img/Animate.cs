@@ -78,7 +78,7 @@ namespace Sop.Common.Img
                 animatedGifEncoder.Finish();
                 return File.Exists(outputFilePath);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 return false;
             }

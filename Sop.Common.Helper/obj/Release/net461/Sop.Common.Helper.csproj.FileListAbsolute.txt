@@ -1,0 +1,15 @@
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Release\net461\Sop.Common.Helper.csproj.CoreCompileInputs.cache
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Release\net461\Sop.Common.Helper.AssemblyInfoInputs.cache
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Release\net461\Sop.Common.Helper.AssemblyInfo.cs
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\Sop.Common.Helper.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\Sop.Common.Helper.pdb
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\HtmlAgilityPack.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\Newtonsoft.Json.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\System.Security.AccessControl.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\System.Security.Permissions.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\System.Security.Principal.Windows.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Release\net461\Sop.Common.Helper.csproj.CopyComplete
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Release\net461\Sop.Common.Helper.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Release\net461\Sop.Common.Helper.pdb
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Release\net461\System.ValueTuple.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Release\net461\Sop.Common.Helper.csprojAssemblyReference.cache

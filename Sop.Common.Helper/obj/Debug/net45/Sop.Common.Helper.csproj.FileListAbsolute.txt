@@ -1,0 +1,12 @@
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Debug\net45\Sop.Common.Helper.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Debug\net45\Sop.Common.Helper.pdb
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Debug\net45\HtmlAgilityPack.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Debug\net45\Newtonsoft.Json.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Debug\net45\Microsoft.VisualBasic.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\bin\Debug\net45\Microsoft.VisualBasic.xml
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net45\Sop.Common.Helper.csproj.CoreCompileInputs.cache
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net45\Sop.Common.Helper.AssemblyInfoInputs.cache
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net45\Sop.Common.Helper.AssemblyInfo.cs
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net45\Sop.Common.Helper.csproj.CopyComplete
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net45\Sop.Common.Helper.dll
+E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net45\Sop.Common.Helper.pdb
