@@ -1,4 +1,0 @@
-E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net40\Sop.Common.Helper.csprojAssemblyReference.cache
-E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net40\Sop.Common.Helper.csproj.CoreCompileInputs.cache
-E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net40\Sop.Common.Helper.AssemblyInfoInputs.cache
-E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net40\Sop.Common.Helper.AssemblyInfo.cs
