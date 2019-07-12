@@ -35,7 +35,7 @@ namespace Sop.Common.Img
         }
 
         #endregion Instance
-         
+
         /// <summary>
         /// 生产GIF
         /// </summary>
@@ -46,7 +46,7 @@ namespace Sop.Common.Img
         /// <param name="w">默认0，保持原来宽度</param>
         /// <param name="h">默认0，保持原来高度</param>
         /// <returns></returns>
-        public bool SetAminmate(string[] imageFilePaths, string outputFilePath, int delay = 500, bool loop = true, int w = 0, int h = 0)
+        public bool GenerateAminmate(string[] imageFilePaths, string outputFilePath, int delay = 500, bool loop = true, int w = 0, int h = 0)
         {
             try
             {
@@ -90,7 +90,7 @@ namespace Sop.Common.Img
         /// <param name="imageGifPath"></param>
         /// <param name="outputFilePath"></param>
         /// <returns></returns>
-        public ReturnValues GetAminmate(string imageGifPath, string outputFilePath)
+        public ReturnValues DecomposeAminmate(string imageGifPath, string outputFilePath, string fileNamePrefix = null, string FileNameSuffix = ".png")
         {
 
             var isExists = File.Exists(imageGifPath);
@@ -107,10 +107,23 @@ namespace Sop.Common.Img
             List<string> list = new List<string>();
             for (int i = 0, count = de.GetFrameCount(); i < count; i++)
             {
-                System.DrawingCore.Image frame = de.GetFrame(i);
-                outputFilePath = outputFilePath + Guid.NewGuid().ToString() + ".png";
+
+                if (string.IsNullOrWhiteSpace(fileNamePrefix))
+                {
+                    fileNamePrefix = Guid.NewGuid().ToString();
+                }
+                outputFilePath = outputFilePath + fileNamePrefix + FileNameSuffix;
+                try
+                {
+                    System.DrawingCore.Image frame = de.GetFrame(i);
+                    frame.Save(outputFilePath);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("捕获异常，不处理" + ex.Message);
+                }
                 list.Add(outputFilePath);
-                frame.Save(outputFilePath);
+
             }
             return new ReturnValues()
             {
@@ -122,8 +135,8 @@ namespace Sop.Common.Img
             };
         }
 
-       
+
     }
 
-   
+
 }

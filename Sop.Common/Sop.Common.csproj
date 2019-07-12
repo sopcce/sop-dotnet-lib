@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net461;net45;</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;net461;</TargetFrameworks>
         <LangVersion>latest</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -26,12 +26,16 @@
     </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     </ItemGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    </ItemGroup>
+   
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">        
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="CronExpression.cs" />
     </ItemGroup>
    
     <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+        <PackageReference Include="StackExchange.Redis" Version="2.0.600" />
         <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     </ItemGroup>
     <ItemGroup>
@@ -57,6 +61,12 @@
 
     <ItemGroup>
       <Folder Include="Properties\" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+      <PackageReference Include="StackExchange.Redis">
+        <Version>2.0.600</Version>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

@@ -4,31 +4,27 @@
         <LangVersion>latest</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <Version>1.0.1</Version>
+        <Version>1.2.1</Version>
         <Authors>sopcce@hotmail.com;</Authors>
         <Copyright>Copyright 2019 sopcce.com</Copyright>
-        <PackageId>Sop.Common.Img</PackageId>
+        <PackageId>Sop.Common.Serialization</PackageId>
 		<Title>Title</Title>		
 		<Summary>zh</Summary>
 		 
-        <Description>Sop.Common.Img
-
-图片相关的工具类，仿照七牛云实现的基本图片功能，后续不断完善</Description>
-        <PackageTags>dotnetcore;c#;gif</PackageTags>
+        <Description>Sop.Common.Serialization</Description>
+        <PackageTags>dotnetcore;c#</PackageTags>
         <PackageProjectUrl>https://github.com/Sopcce/.Net-Common-Utility</PackageProjectUrl>
         <PackageIconUrl>https://raw.githubusercontent.com/Sopcce/.Net-Common-Utility/master/favicon.png</PackageIconUrl>
         <RepositoryUrl>https://github.com/Sopcce/.Net-Common-Utility</RepositoryUrl>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <PackageLicenseUrl>https://github.com/Sopcce/.Net-Common-Utility/blob/master/LICENSE</PackageLicenseUrl>
         <RepositoryType>LGPL</RepositoryType>
-        <PackageReleaseNotes>Sop.Common.Img.
-
-图片相关的工具类，仿照七牛云实现的基本图片功能，后续不断完善</PackageReleaseNotes>
+        <PackageReleaseNotes>Sop.Common.Serialization</PackageReleaseNotes>
         <NeutralLanguage>en</NeutralLanguage>
-        <AssemblyVersion>1.0.1.0</AssemblyVersion>
-        <FileVersion>1.0.1.2</FileVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <FileVersion>1.2.1.0</FileVersion>
         <Company>sopcce@hotmail.com;</Company>
-        <Product>Sop.Common.Img</Product>
+        <Product>Sop.Common.Serialization</Product>
     </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     </ItemGroup>

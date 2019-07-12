@@ -44,278 +44,325 @@ using System.ComponentModel;
 
 namespace System.DrawingCore
 {
-	[Serializable]
-	[ComVisible(true)]
-	[Editor("System.DrawingCore.Design.BitmapEditor, System.DrawingCore.Design", typeof(System.DrawingCore.Design.UITypeEditor))]
-	public sealed class Bitmap : Image
-	{
-		#region constructors
-		// constructors
+    [Serializable]
+    [ComVisible(true)]
+    [Editor("System.DrawingCore.Design.BitmapEditor, System.DrawingCore.Design", typeof(System.DrawingCore.Design.UITypeEditor))]
+    public sealed class Bitmap : Image
+    {
+        #region constructors
+        // constructors
 
-		// required for XmlSerializer (#323246)
-		private Bitmap()
-		{
-		}
+        // required for XmlSerializer (#323246)
+        private Bitmap()
+        {
+        }
 
-		internal Bitmap(IntPtr ptr)
-		{
-			nativeObject = ptr;
-		}
+        internal Bitmap(IntPtr ptr)
+        {
+            nativeObject = ptr;
+        }
 
-		// Usually called when cloning images that need to have
-		// not only the handle saved, but also the underlying stream
-		// (when using MS GDI+ and IStream we must ensure the stream stays alive for all the life of the Image)
-		internal Bitmap(IntPtr ptr, Stream stream)
-		{
-			// under Win32 stream is owned by SD/GDI+ code
-			if (GDIPlus.RunningOnWindows())
-				this.stream = stream;
-			nativeObject = ptr;
-		}
+        // Usually called when cloning images that need to have
+        // not only the handle saved, but also the underlying stream
+        // (when using MS GDI+ and IStream we must ensure the stream stays alive for all the life of the Image)
+        internal Bitmap(IntPtr ptr, Stream stream)
+        {
+            // under Win32 stream is owned by SD/GDI+ code
+            if (GDIPlus.RunningOnWindows())
+                this.stream = stream;
+            nativeObject = ptr;
+        }
 
-		public Bitmap(int width, int height) : this(width, height, PixelFormat.Format32bppArgb)
-		{
-		}
+        public Bitmap(int width, int height) : this(width, height, PixelFormat.Format32bppArgb)
+        {
+        }
 
-		public Bitmap(int width, int height, Graphics g)
-		{
-			if (g == null)
-				throw new ArgumentNullException("g");
+        public Bitmap(int width, int height, Graphics g)
+        {
+            if (g == null)
+                throw new ArgumentNullException("g");
 
-			IntPtr bmp;
-			Status s = GDIPlus.GdipCreateBitmapFromGraphics(width, height, g.nativeObject, out bmp);
-			GDIPlus.CheckStatus(s);
-			nativeObject = bmp;
-		}
+            IntPtr bmp;
+            Status s = GDIPlus.GdipCreateBitmapFromGraphics(width, height, g.nativeObject, out bmp);
+            GDIPlus.CheckStatus(s);
+            nativeObject = bmp;
+        }
 
-		public Bitmap(int width, int height, PixelFormat format)
-		{
-			IntPtr bmp;
-			Status s = GDIPlus.GdipCreateBitmapFromScan0(width, height, 0, format, IntPtr.Zero, out bmp);
-			GDIPlus.CheckStatus(s);
-			nativeObject = bmp;
+        public Bitmap(int width, int height, PixelFormat format)
+        {
+            IntPtr bmp;
+            Status s = GDIPlus.GdipCreateBitmapFromScan0(width, height, 0, format, IntPtr.Zero, out bmp);
+            GDIPlus.CheckStatus(s);
+            nativeObject = bmp;
 
-		}
+        }
 
-		public Bitmap(Image original) : this(original, original.Width, original.Height) { }
+        public Bitmap(Image original) : this(original, original.Width, original.Height) { }
 
-		public Bitmap(Stream stream) : this(stream, false) { }
+        public Bitmap(Stream stream) : this(stream, false) { }
 
-		public Bitmap(string filename) : this(filename, false) { }
+        public Bitmap(string filename) : this(filename, false) { }
 
-		public Bitmap(Image original, Size newSize) : this(original, newSize.Width, newSize.Height) { }
+        public Bitmap(Image original, Size newSize) : this(original, newSize.Width, newSize.Height) { }
 
-		public Bitmap(Stream stream, bool useIcm)
-		{
-			// false: stream is owned by user code
-			nativeObject = InitFromStream(stream);
-		}
+        public Bitmap(Stream stream, bool useIcm)
+        {
+            // false: stream is owned by user code
+            nativeObject = InitFromStream(stream);
+        }
 
-		public Bitmap(string filename, bool useIcm)
-		{
-			if (filename == null)
-				throw new ArgumentNullException("filename");
+        public Bitmap(string filename, bool useIcm)
+        {
+            //add 判断文件是否存在
+            if (filename == null || !File.Exists(filename))
+                throw new ArgumentNullException("filename");
 
-			IntPtr imagePtr;
-			Status st;
 
-			if (useIcm)
-				st = GDIPlus.GdipCreateBitmapFromFileICM(filename, out imagePtr);
-			else
-				st = GDIPlus.GdipCreateBitmapFromFile(filename, out imagePtr);
 
-			GDIPlus.CheckStatus(st);
-			nativeObject = imagePtr;
-		}
 
-		public Bitmap(Type type, string resource)
-		{
-			if (resource == null)
-				throw new ArgumentException("resource");
+            IntPtr imagePtr;
+            Status st;
 
-			// For compatibility with the .NET Framework
-			if (type == null)
-				throw new NullReferenceException();
+            if (useIcm)
+                st = GDIPlus.GdipCreateBitmapFromFileICM(filename, out imagePtr);
+            else
+                st = GDIPlus.GdipCreateBitmapFromFile(filename, out imagePtr);
 
-			Stream s = type?.GetTypeInfo().Assembly.GetManifestResourceStream(type, resource);
-			if (s == null)
-			{
-				string msg = string.Format("Resource '{0}' was not found.", resource);
-				throw new FileNotFoundException(msg);
-			}
+            GDIPlus.CheckStatus(st);
+            nativeObject = imagePtr;
+        }
 
-			nativeObject = InitFromStream(s);
-			// under Win32 stream is owned by SD/GDI+ code
-			if (GDIPlus.RunningOnWindows())
-				stream = s;
-		}
 
-		public Bitmap(Image original, int width, int height) : this(width, height, PixelFormat.Format32bppArgb)
-		{
-			Graphics graphics = Graphics.FromImage(this);
 
-			graphics.DrawImage(original, 0, 0, width, height);
-			graphics.Dispose();
-		}
+        public Bitmap(Type type, string resource)
+        {
+            if (resource == null)
+                throw new ArgumentException("resource");
 
-		public Bitmap(int width, int height, int stride, PixelFormat format, IntPtr scan0)
-		{
-			IntPtr bmp;
+            // For compatibility with the .NET Framework
+            if (type == null)
+                throw new NullReferenceException();
 
-			Status status = GDIPlus.GdipCreateBitmapFromScan0(width, height, stride, format, scan0, out bmp);
-			GDIPlus.CheckStatus(status);
-			nativeObject = bmp;
-		}
+            Stream s = type?.GetTypeInfo().Assembly.GetManifestResourceStream(type, resource);
+            if (s == null)
+            {
+                string msg = string.Format("Resource '{0}' was not found.", resource);
+                throw new FileNotFoundException(msg);
+            }
 
-		private Bitmap(SerializationInfo info, StreamingContext context)
-			: base(info, context)
-		{
-		}
+            nativeObject = InitFromStream(s);
+            // under Win32 stream is owned by SD/GDI+ code
+            if (GDIPlus.RunningOnWindows())
+                stream = s;
+        }
 
-		#endregion
-		// methods
-		public Color GetPixel(int x, int y)
-		{
+        public Bitmap(Image original, int width, int height) : this(width, height, PixelFormat.Format32bppArgb)
+        {
+            Graphics graphics = Graphics.FromImage(this);
 
-			int argb;
+            graphics.DrawImage(original, 0, 0, width, height);
+            graphics.Dispose();
+        }
 
-			Status s = GDIPlus.GdipBitmapGetPixel(nativeObject, x, y, out argb);
-			GDIPlus.CheckStatus(s);
+        public Bitmap(int width, int height, int stride, PixelFormat format, IntPtr scan0)
+        {
+            IntPtr bmp;
 
-			return Color.FromArgb(argb);
-		}
+            Status status = GDIPlus.GdipCreateBitmapFromScan0(width, height, stride, format, scan0, out bmp);
+            GDIPlus.CheckStatus(status);
+            nativeObject = bmp;
+        }
 
-		public void SetPixel(int x, int y, Color color)
-		{
-			Status s = GDIPlus.GdipBitmapSetPixel(nativeObject, x, y, color.ToArgb());
-			if (s == Status.InvalidParameter)
-			{
-				// check is done in case of an error only to avoid another
-				// unmanaged call for normal (successful) calls
-				if ((this.PixelFormat & PixelFormat.Indexed) != 0)
-				{
-					string msg = string.Format("SetPixel cannot be called on indexed bitmaps.");
-					throw new InvalidOperationException(msg);
-				}
-			}
-			GDIPlus.CheckStatus(s);
-		}
+        private Bitmap(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
 
-		public Bitmap Clone(Rectangle rect, PixelFormat format)
-		{
-			IntPtr bmp;
-			Status status = GDIPlus.GdipCloneBitmapAreaI(rect.X, rect.Y, rect.Width, rect.Height,
-				format, nativeObject, out bmp);
-			GDIPlus.CheckStatus(status);
-			return new Bitmap(bmp);
-		}
+        #endregion
+        // methods
+        public Color GetPixel(int x, int y)
+        {
 
-		public Bitmap Clone(RectangleF rect, PixelFormat format)
-		{
-			IntPtr bmp;
-			Status status = GDIPlus.GdipCloneBitmapArea(rect.X, rect.Y, rect.Width, rect.Height,
-				format, nativeObject, out bmp);
-			GDIPlus.CheckStatus(status);
-			return new Bitmap(bmp);
-		}
+            int argb;
 
-		public static Bitmap FromHicon(IntPtr hicon)
-		{
-			IntPtr bitmap;
-			Status status = GDIPlus.GdipCreateBitmapFromHICON(hicon, out bitmap);
-			GDIPlus.CheckStatus(status);
-			return new Bitmap(bitmap);
-		}
+            Status s = GDIPlus.GdipBitmapGetPixel(nativeObject, x, y, out argb);
+            GDIPlus.CheckStatus(s);
 
-		public static Bitmap FromResource(IntPtr hinstance, string bitmapName)  //TODO: Untested
-		{
-			IntPtr bitmap;
-			Status status = GDIPlus.GdipCreateBitmapFromResource(hinstance, bitmapName, out bitmap);
-			GDIPlus.CheckStatus(status);
-			return new Bitmap(bitmap);
-		}
+            return Color.FromArgb(argb);
+        }
 
-		[EditorBrowsable(EditorBrowsableState.Advanced)]
-		public IntPtr GetHbitmap()
-		{
-			return GetHbitmap(Color.Gray);
-		}
+        public void SetPixel(int x, int y, Color color)
+        {
+            Status s = GDIPlus.GdipBitmapSetPixel(nativeObject, x, y, color.ToArgb());
+            if (s == Status.InvalidParameter)
+            {
+                // check is done in case of an error only to avoid another
+                // unmanaged call for normal (successful) calls
+                if ((this.PixelFormat & PixelFormat.Indexed) != 0)
+                {
+                    string msg = string.Format("SetPixel cannot be called on indexed bitmaps.");
+                    throw new InvalidOperationException(msg);
+                }
+            }
+            GDIPlus.CheckStatus(s);
+        }
 
-		[EditorBrowsable(EditorBrowsableState.Advanced)]
-		public IntPtr GetHbitmap(Color background)
-		{
-			IntPtr HandleBmp;
+        public Bitmap Clone(Rectangle rect, PixelFormat format)
+        {
+            IntPtr bmp;
+            Status status = GDIPlus.GdipCloneBitmapAreaI(rect.X, rect.Y, rect.Width, rect.Height,
+                format, nativeObject, out bmp);
+            GDIPlus.CheckStatus(status);
+            return new Bitmap(bmp);
+        }
 
-			Status status = GDIPlus.GdipCreateHBITMAPFromBitmap(nativeObject, out HandleBmp, background.ToArgb());
-			GDIPlus.CheckStatus(status);
+        public Bitmap Clone(RectangleF rect, PixelFormat format)
+        {
+            IntPtr bmp;
+            Status status = GDIPlus.GdipCloneBitmapArea(rect.X, rect.Y, rect.Width, rect.Height,
+                format, nativeObject, out bmp);
+            GDIPlus.CheckStatus(status);
+            return new Bitmap(bmp);
+        }
 
-			return HandleBmp;
-		}
+        public static Bitmap FromHicon(IntPtr hicon)
+        {
+            IntPtr bitmap;
+            Status status = GDIPlus.GdipCreateBitmapFromHICON(hicon, out bitmap);
+            GDIPlus.CheckStatus(status);
+            return new Bitmap(bitmap);
+        }
 
-		[EditorBrowsable(EditorBrowsableState.Advanced)]
-		public IntPtr GetHicon()
-		{
-			IntPtr HandleIcon;
+        public static Bitmap FromResource(IntPtr hinstance, string bitmapName)  //TODO: Untested
+        {
+            IntPtr bitmap;
+            Status status = GDIPlus.GdipCreateBitmapFromResource(hinstance, bitmapName, out bitmap);
+            GDIPlus.CheckStatus(status);
+            return new Bitmap(bitmap);
+        }
 
-			Status status = GDIPlus.GdipCreateHICONFromBitmap(nativeObject, out HandleIcon);
-			GDIPlus.CheckStatus(status);
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        public IntPtr GetHbitmap()
+        {
+            return GetHbitmap(Color.Gray);
+        }
 
-			return HandleIcon;
-		}
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        public IntPtr GetHbitmap(Color background)
+        {
+            IntPtr HandleBmp;
 
-		public BitmapData LockBits(Rectangle rect, ImageLockMode flags, PixelFormat format)
-		{
-			BitmapData result = new BitmapData();
-			return LockBits(rect, flags, format, result);
-		}
+            Status status = GDIPlus.GdipCreateHBITMAPFromBitmap(nativeObject, out HandleBmp, background.ToArgb());
+            GDIPlus.CheckStatus(status);
 
-		public
-		BitmapData LockBits(Rectangle rect, ImageLockMode flags, PixelFormat format, BitmapData bitmapData)
-		{
-			Status status = GDIPlus.GdipBitmapLockBits(nativeObject, ref rect, flags, format, bitmapData);
-			//NOTE: scan0 points to piece of memory allocated in the unmanaged space
-			GDIPlus.CheckStatus(status);
+            return HandleBmp;
+        }
 
-			return bitmapData;
-		}
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        public IntPtr GetHicon()
+        {
+            IntPtr HandleIcon;
 
-		public void MakeTransparent()
-		{
-			Color clr = GetPixel(0, 0);
-			MakeTransparent(clr);
-		}
+            Status status = GDIPlus.GdipCreateHICONFromBitmap(nativeObject, out HandleIcon);
+            GDIPlus.CheckStatus(status);
 
-		public void MakeTransparent(Color transparentColor)
-		{
-			// We have to draw always over a 32-bitmap surface that supports alpha channel
-			Bitmap bmp = new Bitmap(Width, Height, PixelFormat.Format32bppArgb);
-			Graphics gr = Graphics.FromImage(bmp);
-			Rectangle destRect = new Rectangle(0, 0, Width, Height);
-			ImageAttributes imageAttr = new ImageAttributes();
+            return HandleIcon;
+        }
 
-			imageAttr.SetColorKey(transparentColor, transparentColor);
+        public BitmapData LockBits(Rectangle rect, ImageLockMode flags, PixelFormat format)
+        {
+            BitmapData result = new BitmapData();
+            return LockBits(rect, flags, format, result);
+        }
 
-			gr.DrawImage(this, destRect, 0, 0, Width, Height, GraphicsUnit.Pixel, imageAttr);
+        public
+        BitmapData LockBits(Rectangle rect, ImageLockMode flags, PixelFormat format, BitmapData bitmapData)
+        {
+            Status status = GDIPlus.GdipBitmapLockBits(nativeObject, ref rect, flags, format, bitmapData);
+            //NOTE: scan0 points to piece of memory allocated in the unmanaged space
+            GDIPlus.CheckStatus(status);
 
-			IntPtr oldBmp = nativeObject;
-			nativeObject = bmp.nativeObject;
-			bmp.nativeObject = oldBmp;
+            return bitmapData;
+        }
 
-			gr.Dispose();
-			bmp.Dispose();
-			imageAttr.Dispose();
-		}
+        public void MakeTransparent()
+        {
+            Color clr = GetPixel(0, 0);
+            MakeTransparent(clr);
+        }
 
-		public void SetResolution(float xDpi, float yDpi)
-		{
-			Status status = GDIPlus.GdipBitmapSetResolution(nativeObject, xDpi, yDpi);
-			GDIPlus.CheckStatus(status);
-		}
+        public void MakeTransparent(Color transparentColor)
+        {
+            // We have to draw always over a 32-bitmap surface that supports alpha channel
+            Bitmap bmp = new Bitmap(Width, Height, PixelFormat.Format32bppArgb);
+            Graphics gr = Graphics.FromImage(bmp);
+            Rectangle destRect = new Rectangle(0, 0, Width, Height);
+            ImageAttributes imageAttr = new ImageAttributes();
 
-		public void UnlockBits(BitmapData bitmapdata)
-		{
-			Status status = GDIPlus.GdipBitmapUnlockBits(nativeObject, bitmapdata);
-			GDIPlus.CheckStatus(status);
-		}
-	}
+            imageAttr.SetColorKey(transparentColor, transparentColor);
+
+            gr.DrawImage(this, destRect, 0, 0, Width, Height, GraphicsUnit.Pixel, imageAttr);
+
+            IntPtr oldBmp = nativeObject;
+            nativeObject = bmp.nativeObject;
+            bmp.nativeObject = oldBmp;
+
+            gr.Dispose();
+            bmp.Dispose();
+            imageAttr.Dispose();
+        }
+
+        public void SetResolution(float xDpi, float yDpi)
+        {
+            Status status = GDIPlus.GdipBitmapSetResolution(nativeObject, xDpi, yDpi);
+            GDIPlus.CheckStatus(status);
+        }
+
+        public void UnlockBits(BitmapData bitmapdata)
+        {
+            Status status = GDIPlus.GdipBitmapUnlockBits(nativeObject, bitmapdata);
+            GDIPlus.CheckStatus(status);
+        }
+
+
+        public void GetRGB( int startX, int startY, int w, int h, int[] rgbArray, int offset, int scansize)
+        {
+            const int PixelWidth = 3;
+            const PixelFormat PixelFormat = PixelFormat.Format24bppRgb;
+
+            // En garde!
+            if (this == null) throw new ArgumentNullException("image");
+            if (rgbArray == null) throw new ArgumentNullException("rgbArray");
+            if (startX < 0 || startX + w > this.Width) throw new ArgumentOutOfRangeException("startX");
+            if (startY < 0 || startY + h > this.Height) throw new ArgumentOutOfRangeException("startY");
+            if (w < 0 || w > scansize || w > this.Width) throw new ArgumentOutOfRangeException("w");
+            if (h < 0 || (rgbArray.Length < offset + h * scansize) || h > this.Height) throw new ArgumentOutOfRangeException("h");
+
+            BitmapData data = this.LockBits(new Rectangle(startX, startY, w, h), ImageLockMode.ReadOnly, PixelFormat);
+            try
+            {
+                byte[] pixelData = new Byte[data.Stride];
+                for (int scanline = 0; scanline < data.Height; scanline++)
+                {
+                    Marshal.Copy(data.Scan0 + (scanline * data.Stride), pixelData, 0, data.Stride);
+                    for (int pixeloffset = 0; pixeloffset < data.Width; pixeloffset++)
+                    {
+                        // PixelFormat.Format32bppRgb means the data is stored
+                        // in memory as BGR. We want RGB, so we must do some 
+                        // bit-shuffling.
+                        rgbArray[offset + (scanline * scansize) + pixeloffset] =
+                            (pixelData[pixeloffset * PixelWidth + 2] << 16) +   // R 
+                            (pixelData[pixeloffset * PixelWidth + 1] << 8) +    // G
+                            pixelData[pixeloffset * PixelWidth];                // B
+                    }
+                }
+            }
+            finally
+            {
+                this.UnlockBits(data);
+            }
+        }
+
+       
+    }
 }

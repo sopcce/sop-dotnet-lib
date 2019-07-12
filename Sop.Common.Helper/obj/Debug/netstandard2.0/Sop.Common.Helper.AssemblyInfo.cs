@@ -14,13 +14,12 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sopcce@hotmail.com;")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright 2019 sopcce.com")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("Sop.Common.Helper, a .NET Standard  Sop.Common.Helper library. It is lightweight," +
-    " efficient and fast high-level Sop.Common.Helper & framework")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.4.3")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.5")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Sop.Common.Helper工具类")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.1.2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sop.Common.Helper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sop.Common.Helper")]
-[assembly: System.Reflection.AssemblyVersionAttribute("0.0.4.3")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.0.1.0")]
 [assembly: System.Resources.NeutralResourcesLanguageAttribute("en")]
 
 // 由 MSBuild WriteCodeFragment 类生成。

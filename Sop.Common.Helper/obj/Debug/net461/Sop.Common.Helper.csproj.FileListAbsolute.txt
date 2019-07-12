@@ -13,3 +13,13 @@ E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helpe
 E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.dll
 E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.pdb
 E:\GitHub\STS\src\ThirdParty\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.csprojAssemblyReference.cache
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\bin\Debug\net461\Sop.Common.Helper.dll
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\bin\Debug\net461\Sop.Common.Helper.pdb
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\bin\Debug\net461\System.ValueTuple.dll
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.csprojAssemblyReference.cache
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.csproj.CoreCompileInputs.cache
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.AssemblyInfoInputs.cache
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.AssemblyInfo.cs
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.csproj.CopyComplete
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.dll
+E:\GitHub\STS\src\ThirdParty\.Net-Common-Utility\Sop.Common.Helper\obj\Debug\net461\Sop.Common.Helper.pdb
