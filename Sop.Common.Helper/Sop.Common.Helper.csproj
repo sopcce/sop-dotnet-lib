@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net45;net461;</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Version>0.1.0</Version>
+        <Authors>sopcce@hotmail.com;</Authors>
+        <Copyright>Copyright 2019 sopcce.com</Copyright>
+        <PackageId>Sop.Common.Helper</PackageId>
+        <Description>Sop.Common.Helper工具类</Description>
+        <PackageTags>helper;Sop.Common.Helper;dotnetcore;</PackageTags>
+        <PackageProjectUrl>https://github.com/Sopcce/.Net-Common-Utility</PackageProjectUrl>
+        <PackageIconUrl>https://raw.githubusercontent.com/Sopcce/.Net-Common-Utility/master/favicon.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/Sopcce/.Net-Common-Utility</RepositoryUrl>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <PackageLicenseUrl>https://github.com/Sopcce/.Net-Common-Utility/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryType>LGPL</RepositoryType>
+        <PackageReleaseNotes>helper;Sop.Common.Helper;dotnet core</PackageReleaseNotes>
+        <NeutralLanguage>en</NeutralLanguage>
+        <AssemblyVersion>0.0.1.0</AssemblyVersion>
+        <FileVersion>0.0.1.2</FileVersion>
+        <Company>sopcce@hotmail.com;</Company>
+        <Product>Sop.Common.Helper</Product>
+    </PropertyGroup>
+    
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">        
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Microsoft.VisualBasic">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.VisualBasic.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Data.Entity">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.Entity.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Runtime.Caching">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Caching.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Spider.Properties.cs">
+            <DependentUpon>Spider.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Data\Parser\DataParser`.cs">
+            <DependentUpon>DataParser.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
+
+</Project>
+ 
