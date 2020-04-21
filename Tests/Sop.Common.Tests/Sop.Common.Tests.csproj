@@ -80,17 +80,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sop.Common.File\Sop.Common.File.csproj">
-      <Project>{b3f5592b-62aa-45c1-9ec0-9f3a70e5aebd}</Project>
-      <Name>Sop.Common.File</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Sop.Common.Img\Sop.Common.Img.csproj">
       <Project>{6d9c4669-ca00-4838-b190-35f4cc01c7b6}</Project>
       <Name>Sop.Common.Img</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sop.Common.Quartz\Sop.Common.Quartz.csproj">
-      <Project>{e959a653-0be4-474c-baf4-25d24df3f46b}</Project>
-      <Name>Sop.Common.Quartz</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Sop.Common.Serialization\Sop.Common.Serialization.csproj">
       <Project>{8e807449-e634-4971-8990-e63db141ecb8}</Project>

@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.File", "Sop.Common.File\Sop.Common.File.csproj", "{B3F5592B-62AA-45C1-9EC0-9F3A70E5AEBD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Serialization", "Sop.Common.Serialization\Sop.Common.Serialization.csproj", "{8E807449-E634-4971-8990-E63DB141ECB8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8B9AA686-51BD-40BD-96C3-F34205F0D8BA}"
@@ -17,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Img", "Sop.Commo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Charts", "Sop.Common.Charts\Sop.Common.Charts.csproj", "{D9596503-48CC-4257-BE62-82D6D1577383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sop.Common.Quartz", "Sop.Common.Quartz\Sop.Common.Quartz.csproj", "{E959A653-0BE4-474C-BAF4-25D24DF3F46B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminLTE.WebApp", "AdminLTE.WebApp\AdminLTE.WebApp.csproj", "{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B3F5592B-62AA-45C1-9EC0-9F3A70E5AEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3F5592B-62AA-45C1-9EC0-9F3A70E5AEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3F5592B-62AA-45C1-9EC0-9F3A70E5AEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3F5592B-62AA-45C1-9EC0-9F3A70E5AEBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E807449-E634-4971-8990-E63DB141ECB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E807449-E634-4971-8990-E63DB141ECB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E807449-E634-4971-8990-E63DB141ECB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,10 +43,10 @@ Global
 		{D9596503-48CC-4257-BE62-82D6D1577383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9596503-48CC-4257-BE62-82D6D1577383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9596503-48CC-4257-BE62-82D6D1577383}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E959A653-0BE4-474C-BAF4-25D24DF3F46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E959A653-0BE4-474C-BAF4-25D24DF3F46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E959A653-0BE4-474C-BAF4-25D24DF3F46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E959A653-0BE4-474C-BAF4-25D24DF3F46B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

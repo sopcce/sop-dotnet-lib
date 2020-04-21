@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Sop.Common.Extensions
+namespace System
 {
     /// <summary>
     /// DateTime扩展方法

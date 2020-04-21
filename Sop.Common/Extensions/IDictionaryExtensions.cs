@@ -1,7 +1,7 @@
 ﻿using Sop.Common.Utility;
 using System.Collections.Generic;
 
-namespace Sop.Common.Extensions
+namespace System
 {
     /// <summary>
     /// 对IDictionary的扩展方法
