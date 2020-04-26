@@ -1,4 +1,5 @@
 ﻿using System;
+using Sop.Common.Utility;
 using System.ComponentModel;
 using System.Linq;
 
@@ -16,8 +17,8 @@ namespace System
         public static string GetEnumDisplay(this Enum value)
         {
             var attribute = value.GetType().GetField(Enum.GetName(value.GetType(), value)).GetCustomAttributes(
-                 typeof(DataAnnotations.DisplayAttribute), false)
-                 .Cast<DataAnnotations.DisplayAttribute>()
+                 typeof(DisplayAttribute), false)
+                 .Cast<DisplayAttribute>()
                  .FirstOrDefault();
             if (attribute != null)
             {
@@ -100,5 +101,9 @@ namespace System
             }
             return result;
         }
+    }
+    internal class DisplayAttribute
+    {
+        public string Name { get; internal set; }
     }
 }

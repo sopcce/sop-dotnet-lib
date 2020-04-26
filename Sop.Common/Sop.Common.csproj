@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net461;net45;</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;net461;</TargetFrameworks>
         <LangVersion>latest</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -23,50 +23,28 @@
         <FileVersion>0.0.1.2</FileVersion>
         <Company>sopcce@hotmail.com;</Company>
         <Product>Sop.Common</Product>
-    </PropertyGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    </ItemGroup>
+    </PropertyGroup> 
    
-    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">        
-    </ItemGroup>
-    <ItemGroup>
-      <Compile Remove="CronExpression.cs" />
-    </ItemGroup>
-   
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+		<PackageReference Include="StackExchange.Redis">
+			<Version>2.0.600</Version>
+		</PackageReference>        
+    </ItemGroup>     
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
-        <PackageReference Include="StackExchange.Redis" Version="2.0.600" />
         <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    </ItemGroup>
-    <ItemGroup>
-      <Reference Include="Microsoft.VisualBasic">
-        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.VisualBasic.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Data.Entity">
-        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.Entity.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Runtime.Caching">
-        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Caching.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Compile Update="Spider.Properties.cs">
-            <DependentUpon>Spider.cs</DependentUpon>
-        </Compile>
-        <Compile Update="Data\Parser\DataParser`.cs">
-            <DependentUpon>DataParser.cs</DependentUpon>
-        </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Properties\" />
-    </ItemGroup>
+    </ItemGroup> 
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
       <PackageReference Include="StackExchange.Redis">
         <Version>2.0.600</Version>
       </PackageReference>
+    </ItemGroup> 
+
+    <ItemGroup>
+      <Reference Include="System.Runtime.Caching">
+        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Caching.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>
