@@ -1,0 +1,202 @@
+﻿@{
+    //得到当前访问的controller和action名称
+    var controller = ViewContext.RouteData.Values["controller"].ToString();
+    var action = ViewContext.RouteData.Values["action"].ToString();
+}
+
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        @*<img src="~/Content/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">*@
+        <span class="brand-text font-weight-light">微软外派业务管理系统</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="~/Content/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">管理员</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu @controller @action -->
+        <nav class="mt-2" id="Sidebar-Menu">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-legacy nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+                <li class="nav-item has-treeview ">
+                    <a href="/Home/Index" class="nav-link @if(controller =="Home" && action=="Index" ){ <text>active</text> }">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            首页
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link @if(controller =="ProjectTeam" ){ <text>active</text> }">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            项目组管理
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: @if (controller == "ProjectTeam") { <text>block</text> } else { <text>none</text> };">
+                        <li class="nav-item">
+                            <a href="/ProjectTeam/ProjectTeamIndex" class="nav-link @if(controller =="ProjectTeam" && action=="ProjectTeamIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>项目组信息管理</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ProjectTeam/ProjectTeamEditIndex" class="nav-link @if(controller =="ProjectTeam" && action=="ProjectTeamEditIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>新增项目组人员</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ProjectTeam/ProjectTeamCostIndex" class="nav-link @if(controller =="ProjectTeam" && action=="ProjectTeamCostIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>新增报销及兼职费用</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link @if(controller =="WpUserMangae"){ <text>active</text> }">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            外派人员管理
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: @if (controller == "WpUserMangae") { <text>block</text> } else { <text>none</text> };">
+                        <li class="nav-item">
+                            <a href="/WpUserMangae/UserListIndex" class="nav-link @if(controller =="WpUserMangae" && action=="UserListIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>外派人员列表</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/WpUserMangae/UserEditIndex" class="nav-link @if(controller =="WpUserMangae" && action=="UserEditIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>外派人员新增</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/WpUserMangae/UserAttendanceIndex" class="nav-link @if(controller =="WpUserMangae" && action=="UserAttendanceIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>考勤</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link @if(controller =="OrderManage" ){ <text>active</text> }">
+                        <i class="nav-icon fas  fa-list"></i>
+                        <p>
+                            订单维护
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: @if (controller == "OrderManage") { <text>block</text> } else { <text>none</text> };">
+                        <li class="nav-item">
+                            <a href="/OrderManage/OrderManageListIndex" class="nav-link @if(controller =="OrderManage" && action=="OrderManageListIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>订单列表</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/OrderManage/OrderManageEditIndex" class="nav-link @if(controller =="OrderManage" && action=="OrderManageEditIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>工作订单新增</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link @if(controller =="ReportManage" ){ <text>active</text> }">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            查询统计
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: @if (controller == "ReportManage") { <text>block</text> } else { <text>none</text> };">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link @if(controller =="ReportManage" && action=="Index1" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>待付款</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link @if(controller =="ReportManage" && action=="Index2" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>订单付款进度</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link @if(controller =="ReportManage" && action=="Index3" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>对账单</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link @if(controller =="ReportManage" && action=="Index4" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>出资人对账单</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link @if(controller =="SystemManage"){ <text>active</text> }">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            后台管理
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: @if (controller == "SystemManage") { <text>block</text> } else { <text>none</text> };">
+                        <li class="nav-item">
+                            <a href="/SystemManage/InvestorIndex" class="nav-link @if(controller =="SystemManage" && action=="InvestorIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>出资方管理</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/SystemManage/UserIndex" class="nav-link @if(controller =="SystemManage" && action=="UserIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>出资方管理</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/SystemManage/ProjectLeaderIndex" class="nav-link @if(controller =="SystemManage" && action=="ProjectLeaderIndex" ){ <text>active</text> }">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>项目负责人管理</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
