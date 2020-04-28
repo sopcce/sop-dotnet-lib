@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Charts", "Sop.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminLTE.WebApp", "AdminLTE.WebApp\AdminLTE.WebApp.csproj", "{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sop.Common.Helper", "Sop.Common.Helper\Sop.Common.Helper.csproj", "{5567FE09-EC7D-4B2E-B6AE-D14FC96A1B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3200E76F-DCF5-4A1C-9E78-FD8BD9689DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5567FE09-EC7D-4B2E-B6AE-D14FC96A1B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5567FE09-EC7D-4B2E-B6AE-D14FC96A1B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5567FE09-EC7D-4B2E-B6AE-D14FC96A1B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5567FE09-EC7D-4B2E-B6AE-D14FC96A1B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 
 
-namespace Sop.Common.Helper.Extensions
+namespace System
 {
     /// <summary>
     /// 提供用于设置转换选项的枚举值。

@@ -1,15 +1,12 @@
-
-
-using System;
 using System.Globalization;
 using System.Text;
 
-namespace Sop.Common.Helper.Extensions
+namespace System
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class ChinesePinYin
+	/// <summary>
+	/// 
+	/// </summary>
+	public class ChinesePinYin
     {
         #region 字段和属性
         //拼音代码表

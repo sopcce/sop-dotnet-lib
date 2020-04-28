@@ -3,7 +3,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Sop.Common.Helper.Utility
+namespace Sop.Common.Utility
 {
     /// <summary>
     /// 

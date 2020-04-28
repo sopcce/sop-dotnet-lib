@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Caching;
 
-namespace Sop.Common.Helper.Extensions
+namespace System
 {
     public static class LinqExtensions
     {

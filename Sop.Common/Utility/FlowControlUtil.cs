@@ -1,4 +1,4 @@
-﻿namespace Sop.Common.Utilities
+﻿namespace Sop.Common.Utility
 {
     public static class FlowControlUtil
     {

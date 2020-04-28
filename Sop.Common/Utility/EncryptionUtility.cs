@@ -13,7 +13,6 @@ using System.Collections;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using Sop.Common.Helper.Utility;
 
 namespace Sop.Common.Utility
 {

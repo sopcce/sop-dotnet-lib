@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sop.Common.Helper.Utility
+﻿namespace Sop.Common.Utility
 {
     /// <summary>
     /// 编码
