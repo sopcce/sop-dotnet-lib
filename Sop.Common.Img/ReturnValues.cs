@@ -20,7 +20,13 @@ namespace Sop.Common.Img
         /// delay in milliseconds
         /// </summary>
         public int Delay { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public Size FrameSize { get; internal set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public List<string> OutputFilePaths { get; set; }
     }
 }
